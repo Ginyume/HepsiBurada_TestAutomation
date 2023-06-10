@@ -19,6 +19,9 @@ public class Cosmetic extends Methods {
         String Log3="Click on Cosmetic and Personal Care Button";
         String Log4="Click on the Perfume Button";
         String Log5="Click on the First row second element on page";
+        String Log6="Swicthing Tab";
+        String Log7="Click on Add-To-Cart button";
+        String Log8="Click on MyCart Button";
         extentTest=extent.createTest("Adding a Perfume to Shopping Cart");
         //Navigate to Link
         try {
@@ -69,12 +72,33 @@ public class Cosmetic extends Methods {
 
         //ClickElementByID("i1");
         //Swicth the current tab
-        driverSwitchNewTab(1);
-        //Click to Add-To-Cart button
-        ClickElementByID("addToCart");
-        //Click MyCart Button
-        ClickElementByXpath("//*[starts-with(@id,'AddToCart')]/div/div/div/div/div/div[1]/div/div[1]/div/div[2]/button[1]");
-        //ClickElementByText("Sepete Git");
+        try {
+            driverSwitchNewTab(1);
+            extentTest.log(Status.PASS,Log6);
+        }
+        catch (Exception e)
+        {
+            extentTest.log(Status.FAIL,Log6);
+        }
+
+        //Click on Add-To-Cart button
+        try {
+            ClickElementByID("addToCart");
+            extentTest.log(Status.PASS,Log7);
+        }
+        catch (Exception e)
+        {
+            extentTest.log(Status.FAIL,Log7);
+        }
+        //Click on MyCart Button
+        try {
+            ClickElementByXpath("//*[starts-with(@id,'AddToCart')]/div/div/div/div/div/div[1]/div/div[1]/div/div[2]/button[1]");
+            extentTest.log(Status.PASS,Log8);
+        }
+        catch (Exception e)
+        {
+            extentTest.log(Status.FAIL,Log8);
+        }
         extent.flush();
     }
     @Test
@@ -109,18 +133,6 @@ public class Cosmetic extends Methods {
         catch (Exception e)
         {
             extentTest.log(Status.FAIL,Log3);
-        }
-
-    }
-    @Test
-    public void Deneme() throws IOException {
-        extentTest=extent.createTest("MyFirstTest");
-        try {
-            extentTest.log(Status.FAIL,"Başarılı");
-        }
-        catch (Exception e)
-        {
-            extentTest.log(Status.FAIL,"Başarısız");
         }
         extent.flush();
     }
