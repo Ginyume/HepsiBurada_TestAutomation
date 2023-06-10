@@ -86,29 +86,29 @@ public class Cosmetic extends Methods {
         //Navigate to Link
         try {
             Navigate("https://www.hepsiburada.com/");
-            extentTest.log(Status.PASS,Log1+);
+            extentTest.log(Status.PASS,Log1);
         }
         catch (Exception e)
         {
-            extentTest.log(Status.FAIL,Log1+);
+            extentTest.log(Status.FAIL,Log1);
         }
         //Click MyCart Button
         try {
             ClickElementByXpath("//*[@id=\"shoppingCart\"]");
-            extentTest.log(Status.PASS,Log2+);
+            extentTest.log(Status.PASS,Log2);
         }
         catch (Exception e)
         {
-            extentTest.log(Status.FAIL,Log2+);
+            extentTest.log(Status.FAIL,Log2);
         }
         //Remode The Product
         try {
             ClickElementByXpath("//a[@aria-label='Sepetten Çıkar']");
-            extentTest.log(Status.PASS,Log3+);
+            extentTest.log(Status.PASS,Log3);
         }
         catch (Exception e)
         {
-            extentTest.log(Status.FAIL,Log3+);
+            extentTest.log(Status.FAIL,Log3);
         }
 
     }
